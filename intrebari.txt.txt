@@ -1,0 +1,80 @@
+Varietatea organismelor vii de pe Pamant|Ce este biodiversitatea?;Ce este urbanizarea?;Ce este poluarea?;Ce este industrializarea?|Ce este biodiversitatea?|Biodiversitate|Usoara|100
+Locul unde traieste un organism|Ce este habitatul?;Ce este ecosistemul?;Ce este relieful?;Ce este clima?|Ce este habitatul?|Biodiversitate|Usoara|100
+Grup de organisme din aceeasi specie|Ce este populatia?;Ce este ecosistemul?;Ce este biosfera?;Ce este clima?|Ce este populatia?|Biodiversitate|Usoara|100
+Interactiunea dintre organisme si mediu|Ce este ecosistemul?;Ce este habitatul?;Ce este clima?;Ce este relieful?|Ce este ecosistemul?|Biodiversitate|Usoara|100
+Animale care mananca plante|Ce sunt erbivorele?;Ce sunt omnivorele?;Ce sunt carnivorele?;Ce sunt bacteriile?|Ce sunt erbivorele?|Biodiversitate|Usoara|100
+Animale care mananca carne|Ce sunt carnivorele?;Ce sunt erbivorele?;Ce sunt omnivorele?;Ce sunt parazitele?|Ce sunt carnivorele?|Biodiversitate|Usoara|100
+Specii care nu mai exista|Ce sunt speciile extincte?;Ce sunt speciile rare?;Ce sunt speciile invazive?;Ce sunt speciile domestice?|Ce sunt speciile extincte?|Biodiversitate|Usoara|100
+Protejarea naturii|Ce este conservarea?;Ce este poluarea?;Ce este industrializarea?;Ce este urbanizarea?|Ce este conservarea?|Biodiversitate|Usoara|100
+Distrugerea mediului|Ce este poluarea?;Ce este reciclarea?;Ce este adaptarea?;Ce este migratia?|Ce este poluarea?|Biodiversitate|Usoara|100
+Animale care mananca plante si carne|Ce sunt omnivorele?;Ce sunt erbivorele?;Ce sunt carnivorele?;Ce sunt virusii?|Ce sunt omnivorele?|Biodiversitate|Usoara|100
+
+Totalitatea ecosistemelor|Ce este biosfera?;Ce este atmosfera?;Ce este hidrosfera?;Ce este litosfera?|Ce este biosfera?|Biodiversitate|Medie|200
+Specii care afecteaza ecosistemul|Ce sunt speciile invazive?;Ce sunt speciile protejate?;Ce sunt speciile rare?;Ce sunt speciile domestice?|Ce sunt speciile invazive?|Biodiversitate|Medie|200
+Disparitia speciilor|Ce este extinctia?;Ce este evolutia?;Ce este migratia?;Ce este adaptarea?|Ce este extinctia?|Biodiversitate|Medie|200
+Organisme care descompun materia|Ce sunt descompunatorii?;Ce sunt producatorii?;Ce sunt consumatorii?;Ce sunt pradatorii?|Ce sunt descompunatorii?|Biodiversitate|Medie|200
+Deplasarea animalelor|Ce este migratia?;Ce este extinctia?;Ce este fotosinteza?;Ce este digestia?|Ce este migratia?|Biodiversitate|Medie|200
+Capacitatea de adaptare|Ce este adaptarea?;Ce este extinctia?;Ce este migratia?;Ce este poluarea?|Ce este adaptarea?|Biodiversitate|Medie|200
+Transferul energiei|Ce este lantul trofic?;Ce este ecosistemul?;Ce este habitatul?;Ce este clima?|Ce este lantul trofic?|Biodiversitate|Medie|200
+Plantele sunt|Ce sunt producatorii?;Ce sunt consumatorii?;Ce sunt descompunatorii?;Ce sunt pradatorii?|Ce sunt producatorii?|Biodiversitate|Medie|200
+Relatie benefica pentru ambele|Ce este mutualismul?;Ce este parazitismul?;Ce este competitia?;Ce este pradarea?|Ce este mutualismul?|Biodiversitate|Medie|200
+Organism care traieste pe altul|Ce este parazitismul?;Ce este mutualismul?;Ce este competitia?;Ce este cooperarea?|Ce este parazitismul?|Biodiversitate|Medie|200
+
+Varietatea genetica intr-o specie|Ce este diversitatea genetica?;Ce este ecosistemul?;Ce este habitatul?;Ce este populatia?|Ce este diversitatea genetica?|Biodiversitate|Grea|300
+Interconectarea lanturilor trofice|Ce este reteaua trofica?;Ce este lantul trofic?;Ce este biosfera?;Ce este habitatul?|Ce este reteaua trofica?|Biodiversitate|Grea|300
+Specii esentiale pentru ecosistem|Ce sunt speciile cheie?;Ce sunt speciile invazive?;Ce sunt speciile domestice?;Ce sunt speciile rare?|Ce sunt speciile cheie?|Biodiversitate|Grea|300
+Schimbarea speciilor in timp|Ce este evolutia?;Ce este extinctia?;Ce este adaptarea?;Ce este migratia?|Ce este evolutia?|Biodiversitate|Grea|300
+Disparitie masiva rapida|Ce este extinctia in masa?;Ce este migratia?;Ce este adaptarea?;Ce este conservarea?|Ce este extinctia in masa?|Biodiversitate|Grea|300
+Specii limitate geografic|Ce sunt speciile endemice?;Ce sunt speciile invazive?;Ce sunt speciile migratoare?;Ce sunt speciile domestice?|Ce sunt speciile endemice?|Biodiversitate|Grea|300
+Refacerea ecosistemelor|Ce este succesiunea ecologica?;Ce este extinctia?;Ce este migratia?;Ce este poluarea?|Ce este succesiunea ecologica?|Biodiversitate|Grea|300
+Consumatori in lantul trofic|Ce sunt consumatorii?;Ce sunt producatorii?;Ce sunt descompunatorii?;Ce sunt bacteriile?|Ce sunt consumatorii?|Biodiversitate|Grea|300
+Echilibrul naturii|Ce este echilibrul ecologic?;Ce este poluarea?;Ce este urbanizarea?;Ce este industrializarea?|Ce este echilibrul ecologic?|Biodiversitate|Grea|300
+Ecosistem afectat de oameni|Ce este degradarea mediului?;Ce este adaptarea?;Ce este evolutia?;Ce este mutualismul?|Ce este degradarea mediului?|Biodiversitate|Grea|300
+
+Relatie intre organisme|Ce este ecosistemul?;Ce este habitatul?;Ce este clima?;Ce este relieful?|Ce este ecosistemul?|Biodiversitate|Medie|200
+Plantele produc hrana|Ce este fotosinteza?;Ce este respiratia?;Ce este digestia?;Ce este excretia?|Ce este fotosinteza?|Biodiversitate|Usoara|100
+Animale care vaneaza|Ce sunt pradatorii?;Ce sunt erbivorele?;Ce sunt omnivorele?;Ce sunt bacteriile?|Ce sunt pradatorii?|Biodiversitate|Usoara|100
+Specii care dispar|Ce este extinctia?;Ce este evolutia?;Ce este migratia?;Ce este adaptarea?|Ce este extinctia?|Biodiversitate|Medie|200
+Relatie benefica|Ce este mutualismul?;Ce este parazitismul?;Ce este competitia?;Ce este pradarea?|Ce este mutualismul?|Biodiversitate|Medie|200
+
+Organisme care descompun|Ce sunt descompunatorii?;Ce sunt producatorii?;Ce sunt consumatorii?;Ce sunt pradatorii?|Ce sunt descompunatorii?|Biodiversitate|Medie|200
+Mutarea animalelor|Ce este migratia?;Ce este extinctia?;Ce este adaptarea?;Ce este evolutia?|Ce este migratia?|Biodiversitate|Medie|200
+Specii invazive|Ce sunt speciile invazive?;Ce sunt speciile protejate?;Ce sunt speciile rare?;Ce sunt speciile domestice?|Ce sunt speciile invazive?|Biodiversitate|Medie|200
+Adaptarea organismelor|Ce este adaptarea?;Ce este extinctia?;Ce este migratia?;Ce este poluarea?|Ce este adaptarea?|Biodiversitate|Medie|200
+Echilibrul naturii|Ce este echilibrul ecologic?;Ce este poluarea?;Ce este urbanizarea?;Ce este industrializarea?|Ce este echilibrul ecologic?|Biodiversitate|Grea|300
+
+Diversitate genetica|Ce este diversitatea genetica?;Ce este ecosistemul?;Ce este populatia?;Ce este biosfera?|Ce este diversitatea genetica?|Biodiversitate|Grea|300
+Specii rare|Ce sunt speciile rare?;Ce sunt speciile invazive?;Ce sunt speciile domestice?;Ce sunt speciile comune?|Ce sunt speciile rare?|Biodiversitate|Medie|200
+Habitatul|Ce este habitatul?;Ce este ecosistemul?;Ce este biosfera?;Ce este relieful?|Ce este habitatul?|Biodiversitate|Usoara|100
+Lant trofic|Ce este lantul trofic?;Ce este ecosistemul?;Ce este biosfera?;Ce este habitatul?|Ce este lantul trofic?|Biodiversitate|Medie|200
+Relatie de competitie|Ce este competitia?;Ce este mutualismul?;Ce este parazitismul?;Ce este pradarea?|Ce este competitia?|Biodiversitate|Usoara|100
+
+Relatie de pradare|Ce este pradarea?;Ce este mutualismul?;Ce este competitia?;Ce este cooperarea?|Ce este pradarea?|Biodiversitate|Usoara|100
+Poluarea mediului|Ce este poluarea?;Ce este conservarea?;Ce este adaptarea?;Ce este migratia?|Ce este poluarea?|Biodiversitate|Usoara|100
+Biosfera|Ce este biosfera?;Ce este atmosfera?;Ce este hidrosfera?;Ce este litosfera?|Ce este biosfera?|Biodiversitate|Medie|200
+Ecosistem afectat|Ce este degradarea mediului?;Ce este adaptarea?;Ce este evolutia?;Ce este migratia?|Ce este degradarea mediului?|Biodiversitate|Medie|200
+Specii endemice|Ce sunt speciile endemice?;Ce sunt speciile invazive?;Ce sunt speciile domestice?;Ce sunt speciile migratoare?|Ce sunt speciile endemice?|Biodiversitate|Grea|300
+
+Retea trofica|Ce este reteaua trofica?;Ce este lantul trofic?;Ce este ecosistemul?;Ce este habitatul?|Ce este reteaua trofica?|Biodiversitate|Grea|300
+Extinctie in masa|Ce este extinctia in masa?;Ce este adaptarea?;Ce este migratia?;Ce este evolutia?|Ce este extinctia in masa?|Biodiversitate|Grea|300
+Adaptare la mediu|Ce este adaptarea?;Ce este extinctia?;Ce este migratia?;Ce este evolutia?|Ce este adaptarea?|Biodiversitate|Medie|200
+Specii protejate|Ce sunt speciile protejate?;Ce sunt speciile invazive?;Ce sunt speciile domestice?;Ce sunt speciile comune?|Ce sunt speciile protejate?|Biodiversitate|Medie|200
+Ecosistem|Ce este ecosistemul?;Ce este habitatul?;Ce este clima?;Ce este relieful?|Ce este ecosistemul?|Biodiversitate|Medie|200
+
+Fotosinteza|Ce este fotosinteza?;Ce este respiratia?;Ce este digestia?;Ce este excretia?|Ce este fotosinteza?|Biodiversitate|Usoara|100
+Pradatori|Ce sunt pradatorii?;Ce sunt erbivorele?;Ce sunt omnivorele?;Ce sunt bacteriile?|Ce sunt pradatorii?|Biodiversitate|Usoara|100
+Consumatori|Ce sunt consumatorii?;Ce sunt producatorii?;Ce sunt descompunatorii?;Ce sunt bacteriile?|Ce sunt consumatorii?|Biodiversitate|Medie|200
+Producatori|Ce sunt producatorii?;Ce sunt consumatorii?;Ce sunt descompunatorii?;Ce sunt pradatorii?|Ce sunt producatorii?|Biodiversitate|Medie|200
+Descompunatori|Ce sunt descompunatorii?;Ce sunt producatorii?;Ce sunt consumatorii?;Ce sunt pradatorii?|Ce sunt descompunatorii?|Biodiversitate|Medie|200
+
+Relatie mutualista|Ce este mutualismul?;Ce este parazitismul?;Ce este competitia?;Ce este pradarea?|Ce este mutualismul?|Biodiversitate|Medie|200
+Relatie parazitara|Ce este parazitismul?;Ce este mutualismul?;Ce este competitia?;Ce este cooperarea?|Ce este parazitismul?|Biodiversitate|Medie|200
+Relatie cooperare|Ce este cooperarea?;Ce este parazitismul?;Ce este competitia?;Ce este pradarea?|Ce este cooperarea?|Biodiversitate|Usoara|100
+Relatie competitie|Ce este competitia?;Ce este mutualismul?;Ce este parazitismul?;Ce este pradarea?|Ce este competitia?|Biodiversitate|Usoara|100
+Habitat natural|Ce este habitatul?;Ce este ecosistemul?;Ce este biosfera?;Ce este relieful?|Ce este habitatul?|Biodiversitate|Usoara|100
+
+Ecosistem global|Ce este biosfera?;Ce este ecosistemul?;Ce este habitatul?;Ce este populatia?|Ce este biosfera?|Biodiversitate|Medie|200
+Adaptare la mediu|Ce este adaptarea?;Ce este extinctia?;Ce este migratia?;Ce este evolutia?|Ce este adaptarea?|Biodiversitate|Medie|200
+Lant trofic|Ce este lantul trofic?;Ce este ecosistemul?;Ce este biosfera?;Ce este habitatul?|Ce este lantul trofic?|Biodiversitate|Medie|200
+Retea trofica|Ce este reteaua trofica?;Ce este lantul trofic?;Ce este ecosistemul?;Ce este habitatul?|Ce este reteaua trofica?|Biodiversitate|Grea|300
+Echilibru natural|Ce este echilibrul ecologic?;Ce este poluarea?;Ce este urbanizarea?;Ce este industrializarea?|Ce este echilibrul ecologic?|Biodiversitate|Grea|300

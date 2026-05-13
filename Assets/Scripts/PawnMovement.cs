@@ -1,114 +1,80 @@
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
-
-[System.Serializable]
-public class PawnPoint
-{
-    public Transform point;
-
-    [Header("On Arrival Effects")]
-    public bool applyScaleChange = false;
-    public Vector3 scaleMultiplier = Vector3.one;
-
-    public bool applyRotation = false;
-    public Vector3 targetRotationEuler;
-}
 
 public class PawnMovement : MonoBehaviour
 {
-    [Header("Path Settings")]
-    public List<PawnPoint> pathPoints = new List<PawnPoint>();
-    public float moveSpeed = 5f;
-    public float reachThreshold = 0.05f;
+    [Header("Tile-uri de pe marginea tablei")]
+    public Transform[] tileuri;
 
-    [Header("Loop Settings")]
-    public bool loop = true;
-    public bool pingPong = false;
+    [Header("Setari miscare")]
+    public float vitezaMiscare = 4f;
+    public bool pornestePePrimulTile = true;
 
-    private int currentIndex = 0;
-    private int direction = 1;
-    private bool isMoving = false;
+    private int indexTileCurent = 0;
+    private bool seMisca = false;
 
-    void Update()
+    void Start()
     {
-        if (isMoving)
+        // Punem pionul pe primul tile, daca vrem sa fie lipit perfect de tabla
+        if (pornestePePrimulTile && tileuri.Length > 0)
         {
-            MoveToTarget();
-        }
-
-        // if (Input.GetKeyDown(KeyCode.Space))
-        // {
-        //     MoveNextStep();
-        // }
-    }
-
-    void MoveToTarget()
-    {
-        Transform target = pathPoints[currentIndex].point;
-
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            target.position,
-            moveSpeed * Time.deltaTime
-        );
-
-        if (Vector3.Distance(transform.position, target.position) <= reachThreshold)
-        {
-            ApplyNodeEffects();
-            isMoving = false;
+            transform.position = tileuri[0].position;
         }
     }
 
-    void ApplyNodeEffects()
+    public void MutaLaUrmatorulTile()
     {
-        PawnPoint node = pathPoints[currentIndex];
+        // Daca deja se misca, nu il mai trimitem inca o data
+        if (seMisca)
+            return;
 
-        // 🧍 Scale change
-        if (node.applyScaleChange)
+        // Daca nu avem tile-uri puse in Inspector, nu avem ce misca
+        if (tileuri == null || tileuri.Length == 0)
         {
-            transform.localScale = Vector3.Scale(transform.localScale, node.scaleMultiplier);
+            Debug.LogWarning("Pionul nu are tile-uri setate in PawnMovement.");
+            return;
         }
 
-        // 🔄 Rotation change
-        if (node.applyRotation)
+        // Daca am ajuns la ultimul tile, ne oprim acolo
+        if (indexTileCurent >= tileuri.Length - 1)
         {
-            transform.rotation = Quaternion.Euler(node.targetRotationEuler);
+            Debug.Log("Pionul este deja pe ultimul tile.");
+            return;
         }
+
+        indexTileCurent++;
+
+        StartCoroutine(MiscaPion(tileuri[indexTileCurent].position));
     }
 
-    public void MoveNextStep()
+    IEnumerator MiscaPion(Vector3 pozitieFinala)
     {
-        if (pathPoints.Count == 0 || isMoving) return;
+        // Miscam pionul frumos pana la urmatorul tile
+        seMisca = true;
 
-        AdvanceIndex();
-        isMoving = true;
+        while (Vector3.Distance(transform.position, pozitieFinala) > 0.01f)
+        {
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                pozitieFinala,
+                vitezaMiscare * Time.deltaTime
+            );
+
+            yield return null;
+        }
+
+        transform.position = pozitieFinala;
+        seMisca = false;
     }
 
-    void AdvanceIndex()
+    public void ReseteazaPion()
     {
-        if (pingPong)
-        {
-            currentIndex += direction;
+        // Il trimitem inapoi la start
+        indexTileCurent = 0;
 
-            if (currentIndex >= pathPoints.Count)
-            {
-                currentIndex = pathPoints.Count - 2;
-                direction = -1;
-            }
-            else if (currentIndex < 0)
-            {
-                currentIndex = 1;
-                direction = 1;
-            }
-        }
-        else
+        if (tileuri != null && tileuri.Length > 0)
         {
-            currentIndex++;
-
-            if (currentIndex >= pathPoints.Count)
-            {
-                currentIndex = loop ? 0 : pathPoints.Count - 1;
-            }
+            transform.position = tileuri[0].position;
         }
     }
 }

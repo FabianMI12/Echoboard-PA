@@ -125,3 +125,153 @@ Reducerea conectivitatii dintre habitate prin drumuri, cladiri sau terenuri agri
 Specii mari, carismatice, folosite pentru a atrage sprijin pentru conservare|Ce sunt speciile emblematice?;Ce sunt speciile invazive?;Ce sunt speciile oportuniste?;Ce sunt speciile stenobionte?|Ce sunt speciile emblematice?|Biodiversitate|Grea|300
 Specii a caror protejare ajuta indirect multe alte specii din habitat|Ce sunt speciile umbrela?;Ce sunt speciile exotice?;Ce sunt speciile domestice?;Ce sunt speciile accidentale?|Ce sunt speciile umbrela?|Biodiversitate|Grea|300
 Evaluarea riscului de disparitie al speciilor la nivel global|Ce este Lista Rosie IUCN?;Ce este lantul trofic global?;Ce este piramida energiei?;Ce este fondul genetic local?|Ce este Lista Rosie IUCN?|Biodiversitate|Grea|300
+Viata din sol|Ce este fauna solului?;Ce este lantul trofic?;Ce este arealul?;Ce este biomul?|Ce este fauna solului?|Biodiversitate|Usoara|100
+Plante acvatice|Ce sunt plantele acvatice?;Ce sunt pradatorii?;Ce sunt consumatorii?;Ce sunt poluatorii?|Ce sunt plantele acvatice?|Biodiversitate|Usoara|100
+Animale de padure|Ce este fauna forestiera?;Ce este flora marina?;Ce este biotopul acvatic?;Ce este desertificarea?|Ce este fauna forestiera?|Biodiversitate|Usoara|100
+Plantele unei regiuni|Ce este flora?;Ce este fauna?;Ce este biosfera?;Ce este biomasa?|Ce este flora?|Biodiversitate|Usoara|100
+Animalele unei regiuni|Ce este fauna?;Ce este flora?;Ce este habitatul?;Ce este succesiunea?|Ce este fauna?|Biodiversitate|Usoara|100
+Mediu de apa dulce|Ce este ecosistemul acvatic dulce?;Ce este ecosistemul desertic?;Ce este ecosistemul urban?;Ce este biomul polar?|Ce este ecosistemul acvatic dulce?|Biodiversitate|Usoara|100
+Mediu marin|Ce este ecosistemul marin?;Ce este ecosistemul montan?;Ce este ecosistemul agricol?;Ce este habitatul terestru?|Ce este ecosistemul marin?|Biodiversitate|Usoara|100
+Mediu de padure|Ce este ecosistemul forestier?;Ce este reciful de corali?;Ce este pajistea marina?;Ce este tundra alpina?|Ce este ecosistemul forestier?|Biodiversitate|Usoara|100
+Mediu de pajiste|Ce este ecosistemul de pajiste?;Ce este ecosistemul marin?;Ce este ecosistemul polar?;Ce este ecosistemul subteran?|Ce este ecosistemul de pajiste?|Biodiversitate|Usoara|100
+Mediu desertic|Ce este ecosistemul desertic?;Ce este ecosistemul forestier?;Ce este ecosistemul lacustru?;Ce este ecosistemul de mlastina?|Ce este ecosistemul desertic?|Biodiversitate|Usoara|100
+Apa ca factor|Ce este factorul abiotic?;Ce este factorul biotic?;Ce este producatorul?;Ce este consumatorul?|Ce este factorul abiotic?|Biodiversitate|Usoara|100
+Lumina ca factor|Ce este factorul abiotic?;Ce este factorul biotic?;Ce este pradatorul?;Ce este polenizatorul?|Ce este factorul abiotic?|Biodiversitate|Usoara|100
+Ciuperci descompunatoare|Ce sunt descompunatorii?;Ce sunt producatorii?;Ce sunt erbivorele?;Ce sunt polenizatorii?|Ce sunt descompunatorii?|Biodiversitate|Usoara|100
+Alge producatoare|Ce sunt producatorii?;Ce sunt consumatorii?;Ce sunt parazitii?;Ce sunt pradatorii?|Ce sunt producatorii?|Biodiversitate|Usoara|100
+Iepure in lant trofic|Ce este consumatorul primar?;Ce este producatorul?;Ce este descompunatorul?;Ce este pradatorul de varf?|Ce este consumatorul primar?|Biodiversitate|Usoara|100
+Lup in lant trofic|Ce este consumatorul secundar?;Ce este producatorul?;Ce este polenizatorul?;Ce este factorul abiotic?|Ce este consumatorul secundar?|Biodiversitate|Usoara|100
+Floare si albina|Ce este mutualismul?;Ce este parazitismul?;Ce este competitia?;Ce este fragmentarea?|Ce este mutualismul?|Biodiversitate|Usoara|100
+Capusa pe animal|Ce este parazitismul?;Ce este mutualismul?;Ce este comensalismul?;Ce este cooperarea?|Ce este parazitismul?|Biodiversitate|Usoara|100
+Doua specii pentru hrana|Ce este competitia?;Ce este polenizarea?;Ce este bioacumularea?;Ce este succesiunea?|Ce este competitia?|Biodiversitate|Usoara|100
+Vulpe si iepure|Ce este pradarea?;Ce este simbioza?;Ce este dispersia?;Ce este eutrofizarea?|Ce este pradarea?|Biodiversitate|Usoara|100
+Seminte purtate de vant|Ce este dispersia semintelor?;Ce este poluarea apei?;Ce este lantul detritivor?;Ce este biomagnificarea?|Ce este dispersia semintelor?|Biodiversitate|Usoara|100
+Inmultirea plantelor cu flori|Ce este polenizarea?;Ce este respiratia?;Ce este descompunerea?;Ce este eroziunea genetica?|Ce este polenizarea?|Biodiversitate|Usoara|100
+Padure protejata|Ce este rezervatia naturala?;Ce este zona industriala?;Ce este monocultura?;Ce este cariera ecologica?|Ce este rezervatia naturala?|Biodiversitate|Usoara|100
+Animal protejat|Ce este specie protejata?;Ce este specie exotica?;Ce este specie oportunista?;Ce este specie domesticita?|Ce este specie protejata?|Biodiversitate|Usoara|100
+Specie locala|Ce este specie nativa?;Ce este specie invaziva?;Ce este specie disparuta?;Ce este specie cosmopolita?|Ce este specie nativa?|Biodiversitate|Usoara|100
+Specie adusa|Ce este specie exotica?;Ce este specie endemica?;Ce este specie cheie?;Ce este specie pionier?|Ce este specie exotica?|Biodiversitate|Usoara|100
+Specie foarte rara|Ce este specie rara?;Ce este specie comuna?;Ce este specie dominanta?;Ce este specie generalista?|Ce este specie rara?|Biodiversitate|Usoara|100
+Specie raspandita mult|Ce este specie comuna?;Ce este specie endemica?;Ce este specie amenintata?;Ce este specie cheie?|Ce este specie comuna?|Biodiversitate|Usoara|100
+Organisme vii|Ce sunt factorii biotici?;Ce sunt factorii abiotici?;Ce sunt mineralele?;Ce sunt nutrientii?|Ce sunt factorii biotici?|Biodiversitate|Usoara|100
+Mediu fara viata|Ce sunt factorii abiotici?;Ce sunt factorii biotici?;Ce sunt comunitatile?;Ce sunt populatiile?|Ce sunt factorii abiotici?|Biodiversitate|Usoara|100
+Hrana in natura|Ce este resursa trofica?;Ce este biotopul?;Ce este arealul?;Ce este biomul?|Ce este resursa trofica?|Biodiversitate|Usoara|100
+Adapost natural|Ce este habitatul?;Ce este populatia?;Ce este pradatorul?;Ce este biomasa?|Ce este habitatul?|Biodiversitate|Usoara|100
+Grup de specii|Ce este comunitatea?;Ce este populatia?;Ce este individul?;Ce este gena?|Ce este comunitatea?|Biodiversitate|Usoara|100
+Un singur organism|Ce este individul?;Ce este populatia?;Ce este ecosistemul?;Ce este biosfera?|Ce este individul?|Biodiversitate|Usoara|100
+Specii din lac|Ce este biodiversitatea acvatica?;Ce este desertificarea?;Ce este nisa terestra?;Ce este succesiunea alpina?|Ce este biodiversitatea acvatica?|Biodiversitate|Usoara|100
+Specii din padure|Ce este biodiversitatea forestiera?;Ce este eutrofizarea?;Ce este desertificarea?;Ce este eroziunea solului?|Ce este biodiversitatea forestiera?|Biodiversitate|Usoara|100
+Sol fertil|Ce este sol bogat in organisme?;Ce este habitat steril?;Ce este mediu artificial?;Ce este biotop fara viata?|Ce este sol bogat in organisme?|Biodiversitate|Usoara|100
+Pesti intr-un lac|Ce este populatie acvatica?;Ce este biom marin?;Ce este comunitate terestra?;Ce este factor climatic?|Ce este populatie acvatica?|Biodiversitate|Usoara|100
+Copaci si pasari|Ce este comunitate biologica?;Ce este populatie unica?;Ce este factor abiotic?;Ce este nivel genetic?|Ce este comunitate biologica?|Biodiversitate|Usoara|100
+Padure taiata|Ce este defrisarea?;Ce este polenizarea?;Ce este mutualismul?;Ce este camuflajul?|Ce este defrisarea?|Biodiversitate|Usoara|100
+Apa murdara|Ce este poluarea apei?;Ce este succesiunea primara?;Ce este adaptarea morfologica?;Ce este competitia?|Ce este poluarea apei?|Biodiversitate|Usoara|100
+Aer murdar|Ce este poluarea aerului?;Ce este dispersia semintelor?;Ce este nisa ecologica?;Ce este simbioza?|Ce este poluarea aerului?|Biodiversitate|Usoara|100
+Sol contaminat|Ce este poluarea solului?;Ce este productivitatea primara?;Ce este mutualismul?;Ce este migratia?|Ce este poluarea solului?|Biodiversitate|Usoara|100
+Specii pe cale de disparitie|Ce sunt speciile amenintate?;Ce sunt speciile comune?;Ce sunt speciile generaliste?;Ce sunt speciile cosmopolite?|Ce sunt speciile amenintate?|Biodiversitate|Usoara|100
+Refacerea naturii|Ce este restaurarea ecologica?;Ce este bioacumularea?;Ce este eutrofizarea?;Ce este competitia?|Ce este restaurarea ecologica?|Biodiversitate|Usoara|100
+Teren impadurit|Ce este reimpadurirea?;Ce este desertificarea?;Ce este pradarea?;Ce este poluarea sonora?|Ce este reimpadurirea?|Biodiversitate|Usoara|100
+Teren fara padure|Ce este defrisarea?;Ce este polenizarea?;Ce este camuflajul?;Ce este comensalismul?|Ce este defrisarea?|Biodiversitate|Usoara|100
+Specii din oras|Ce este biodiversitatea urbana?;Ce este reciful de corali?;Ce este tundra polara?;Ce este desertul biologic?|Ce este biodiversitatea urbana?|Biodiversitate|Usoara|100
+Ecosistem creat de om|Ce este ecosistemul artificial?;Ce este ecosistemul virgin?;Ce este biomul polar?;Ce este reciful natural?|Ce este ecosistemul artificial?|Biodiversitate|Usoara|100
+Gradina cu specii|Ce este ecosistem artificial?;Ce este biosfera salbatica?;Ce este desert natural?;Ce este tundra alpina?|Ce este ecosistem artificial?|Biodiversitate|Usoara|100
+Relatie durabila|Ce este simbioza?;Ce este defrisarea?;Ce este poluarea?;Ce este biomasa?|Ce este simbioza?|Biodiversitate|Usoara|100
+Nisa unei specii|Ce este rol ecologic?;Ce este zona climatica?;Ce este lant geologic?;Ce este strat mineral?|Ce este rol ecologic?|Biodiversitate|Medie|200
+Arealul unei specii|Ce este zona de raspandire?;Ce este nivel trofic?;Ce este indice climatic?;Ce este biomasa vegetala?|Ce este zona de raspandire?|Biodiversitate|Medie|200
+Specie indicatoare|Ce este specie care arata starea mediului?;Ce este specie adusa artificial?;Ce este specie fara pradatori?;Ce este specie domestica?|Ce este specie care arata starea mediului?|Biodiversitate|Medie|200
+Specie cheie|Ce este specie cu impact major?;Ce este specie fara rol ecologic?;Ce este specie comuna peste tot?;Ce este specie strict decorativa?|Ce este specie cu impact major?|Biodiversitate|Medie|200
+Specie dominanta|Ce este specie abundenta in comunitate?;Ce este specie disparuta local?;Ce este specie izolata genetic?;Ce este specie parazita obligatoriu?|Ce este specie abundenta in comunitate?|Biodiversitate|Medie|200
+Specie pionier|Ce este specie care colonizeaza prima?;Ce este specie de varf trofic?;Ce este specie fara adaptari?;Ce este specie exclusiv marina?|Ce este specie care colonizeaza prima?|Biodiversitate|Medie|200
+Specie generalista|Ce este specie cu toleranta larga?;Ce este specie cu habitat unic?;Ce este specie strict endemica?;Ce este specie oportunista?|Ce este specie cu toleranta larga?|Biodiversitate|Medie|200
+Specie specialista|Ce este specie cu cerinte specifice?;Ce este specie foarte adaptabila?;Ce este specie cosmopolita?;Ce este specie oportunista?|Ce este specie cu cerinte specifice?|Biodiversitate|Medie|200
+Habitat fragmentat|Ce este habitat impartit in bucati?;Ce este habitat perfect continuu?;Ce este habitat fara specii?;Ce este habitat marin adanc?|Ce este habitat impartit in bucati?|Biodiversitate|Medie|200
+Coridor ecologic|Ce este legatura dintre habitate?;Ce este lantul de pradatori?;Ce este stratul de sol?;Ce este zona fara viata?|Ce este legatura dintre habitate?|Biodiversitate|Medie|200
+Zona tampon|Ce este zona de protectie in jurul ariei protejate?;Ce este zona centrala poluata?;Ce este zona fara organisme?;Ce este zona de competitie genetica?|Ce este zona de protectie in jurul ariei protejate?|Biodiversitate|Medie|200
+Biom terestru|Ce este regiune ecologica mare?;Ce este o singura populatie?;Ce este un organism izolat?;Ce este un lant scurt?|Ce este regiune ecologica mare?|Biodiversitate|Medie|200
+Biotop|Ce este mediul fizic al ecosistemului?;Ce este totalitatea speciilor?;Ce este lantul trofic complet?;Ce este fondul genetic?|Ce este mediul fizic al ecosistemului?|Biodiversitate|Medie|200
+Biocenoza|Ce este comunitatea vie din ecosistem?;Ce este substratul mineral?;Ce este clima regionala?;Ce este relieful local?|Ce este comunitatea vie din ecosistem?|Biodiversitate|Medie|200
+Biomasa|Ce este masa organismelor vii?;Ce este numarul de habitate?;Ce este poluarea acumulata?;Ce este temperatura apei?|Ce este masa organismelor vii?|Biodiversitate|Medie|200
+Productivitate primara|Ce este producerea de materie organica?;Ce este pierderea habitatului?;Ce este scaderea populatiei?;Ce este dispersia animalelor?|Ce este producerea de materie organica?|Biodiversitate|Medie|200
+Nivel trofic|Ce este pozitia in lantul alimentar?;Ce este marimea habitatului?;Ce este durata vietii?;Ce este zona climatica?|Ce este pozitia in lantul alimentar?|Biodiversitate|Medie|200
+Consumator tertiar|Ce este consumator de nivel superior?;Ce este producator primar?;Ce este descompunator de sol?;Ce este polenizator floral?|Ce este consumator de nivel superior?|Biodiversitate|Medie|200
+Retea trofica complexa|Ce este mai multe lanturi conectate?;Ce este o singura specie izolata?;Ce este un habitat fara pradatori?;Ce este o populatie inchisa?|Ce este mai multe lanturi conectate?|Biodiversitate|Medie|200
+Lant detritivor|Ce este lant bazat pe materie moarta?;Ce este lant bazat pe lumina?;Ce este lant fara descompunatori?;Ce este lant al polenizarii?|Ce este lant bazat pe materie moarta?|Biodiversitate|Medie|200
+Piramida energiei|Ce este energia pe niveluri trofice?;Ce este numarul de specii rare?;Ce este varsta indivizilor?;Ce este marimea frunzelor?|Ce este energia pe niveluri trofice?|Biodiversitate|Medie|200
+Piramida biomasei|Ce este biomasa pe niveluri trofice?;Ce este clima pe etaje?;Ce este solul pe straturi?;Ce este densitatea urbana?|Ce este biomasa pe niveluri trofice?|Biodiversitate|Medie|200
+Densitate populationala|Ce este numarul indivizilor pe suprafata?;Ce este numarul speciilor pe continent?;Ce este masa plantelor pe frunza?;Ce este volumul apei din sol?|Ce este numarul indivizilor pe suprafata?|Biodiversitate|Medie|200
+Capacitate de suport|Ce este limita populatiei sustinute de mediu?;Ce este viteza vantului intr-un habitat?;Ce este numarul total de ecosisteme?;Ce este marimea unei specii?|Ce este limita populatiei sustinute de mediu?|Biodiversitate|Medie|200
+Factor limitativ|Ce este factor care opreste cresterea populatiei?;Ce este organism care vaneaza?;Ce este planta care produce hrana?;Ce este specie cu rol minor?|Ce este factor care opreste cresterea populatiei?|Biodiversitate|Medie|200
+Crestere populationala|Ce este marirea numarului de indivizi?;Ce este reducerea biodiversitatii?;Ce este pierderea habitatului?;Ce este scaderea luminii?|Ce este marirea numarului de indivizi?|Biodiversitate|Medie|200
+Scadere populationala|Ce este reducerea numarului de indivizi?;Ce este cresterea biomasei?;Ce este extinderea habitatului?;Ce este cresterea polenizarii?|Ce este reducerea numarului de indivizi?|Biodiversitate|Medie|200
+Natalitate|Ce este rata nasterilor?;Ce este rata mortalitatii?;Ce este rata migratiei?;Ce este rata poluarii?|Ce este rata nasterilor?|Biodiversitate|Medie|200
+Mortalitate|Ce este rata deceselor?;Ce este rata nasterilor?;Ce este rata fotosintezei?;Ce este rata polenizarii?|Ce este rata deceselor?|Biodiversitate|Medie|200
+Emigratie|Ce este plecarea indivizilor din populatie?;Ce este intrarea indivizilor in populatie?;Ce este aparitia unei specii noi?;Ce este pierderea solului?|Ce este plecarea indivizilor din populatie?|Biodiversitate|Medie|200
+Imigratie|Ce este intrarea indivizilor intr-o populatie?;Ce este disparitia unei specii?;Ce este reducerea genetica?;Ce este consumul de hrana?|Ce este intrarea indivizilor intr-o populatie?|Biodiversitate|Medie|200
+Comunitate climax|Ce este stadiu stabil al succesiunii?;Ce este inceputul colonizarii?;Ce este extinctie locala?;Ce este poluare acuta?|Ce este stadiu stabil al succesiunii?|Biodiversitate|Medie|200
+Succesiune ecologica|Ce este schimbarea comunitatilor in timp?;Ce este relatia dintre pradator si prada?;Ce este cresterea temperaturii apei?;Ce este transportul polenului?|Ce este schimbarea comunitatilor in timp?|Biodiversitate|Medie|200
+Succesiune primara|Ce este succesiune fara sol initial?;Ce este succesiune dupa incendiu cu sol?;Ce este competitie intre plante?;Ce este dispersie animala?|Ce este succesiune fara sol initial?|Biodiversitate|Medie|200
+Succesiune secundara|Ce este succesiune dupa perturbare cu sol?;Ce este succesiune pe roca goala?;Ce este simbioza intre specii?;Ce este poluarea chimica?|Ce este succesiune dupa perturbare cu sol?|Biodiversitate|Medie|200
+Restaurare ecologica|Ce este refacerea ecosistemelor degradate?;Ce este introducerea poluantilor?;Ce este marirea exploatarii?;Ce este reducerea habitatelor?|Ce este refacerea ecosistemelor degradate?|Biodiversitate|Medie|200
+Conservare in situ|Ce este protejarea in habitat natural?;Ce este protejarea in laborator?;Ce este cresterea in captivitate doar?;Ce este depozitarea semintelor doar?|Ce este protejarea in habitat natural?|Biodiversitate|Medie|200
+Conservare ex situ|Ce este protejarea in afara habitatului?;Ce este protejarea doar in padure?;Ce este lasarea fara interventie?;Ce este exploatarea controlata?|Ce este protejarea in afara habitatului?|Biodiversitate|Medie|200
+Banca de seminte|Ce este pastrarea diversitatii genetice vegetale?;Ce este adapost pentru pradatori?;Ce este zona de hranire a erbivorelor?;Ce este lant trofic artificial?|Ce este pastrarea diversitatii genetice vegetale?|Biodiversitate|Medie|200
+Gradina botanica|Ce este conservare ex situ a plantelor?;Ce este conservare in situ a pestilor?;Ce este ecosistem marin salbatic?;Ce este habitat subteran natural?|Ce este conservare ex situ a plantelor?|Biodiversitate|Medie|200
+Parc national|Ce este arie protejata mare?;Ce este zona industriala controlata?;Ce este monocultura agricola?;Ce este habitat artificial inchis?|Ce este arie protejata mare?|Biodiversitate|Medie|200
+Arie protejata|Ce este zona destinata conservarii naturii?;Ce este zona destinata defrisarii?;Ce este zona fara reguli ecologice?;Ce este zona exclusiv urbana?|Ce este zona destinata conservarii naturii?|Biodiversitate|Medie|200
+Dezvoltare durabila|Ce este folosirea responsabila a resurselor?;Ce este epuizarea rapida a resurselor?;Ce este distrugerea habitatelor?;Ce este ignorarea conservarii?|Ce este folosirea responsabila a resurselor?|Biodiversitate|Medie|200
+Servicii ecosistemice|Ce sunt beneficiile oferite de natura?;Ce sunt pagubele produse de specii?;Ce sunt doar relatiile de pradare?;Ce sunt exclusiv factorii abiotici?|Ce sunt beneficiile oferite de natura?|Biodiversitate|Medie|200
+Polenizare ca serviciu|Ce este serviciu ecosistemic?;Ce este factor limitativ abiotic?;Ce este competitie directa?;Ce este bioacumulare toxica?|Ce este serviciu ecosistemic?|Biodiversitate|Medie|200
+Purificarea apei|Ce este serviciu ecosistemic?;Ce este lant trofic simplu?;Ce este succesiune primara?;Ce este specie invaziva?|Ce este serviciu ecosistemic?|Biodiversitate|Medie|200
+Fixarea carbonului|Ce este serviciu de reglare?;Ce este competitie trofica?;Ce este efect fondator?;Ce este fragmentare genetica?|Ce este serviciu de reglare?|Biodiversitate|Medie|200
+Controlul daunatorilor|Ce este serviciu ecosistemic?;Ce este poluare chimica?;Ce este extinctie globala?;Ce este succesiune climatica?|Ce este serviciu ecosistemic?|Biodiversitate|Medie|200
+Diversitate alfa|Ce este diversitatea intr-un habitat?;Ce este diferenta dintre habitate?;Ce este diversitatea la nivel global?;Ce este pierderea genetica?|Ce este diversitatea intr-un habitat?|Biodiversitate|Grea|300
+Diversitate beta|Ce este diferenta de specii intre habitate?;Ce este diversitatea intr-un singur loc?;Ce este numarul total global?;Ce este biomasa pe niveluri?|Ce este diferenta de specii intre habitate?|Biodiversitate|Grea|300
+Diversitate gama|Ce este diversitatea la nivel regional?;Ce este diversitatea intr-un copac?;Ce este energia pe nivel trofic?;Ce este rata natalitatii?|Ce este diversitatea la nivel regional?|Biodiversitate|Grea|300
+Indice Shannon|Ce este masura a diversitatii speciilor?;Ce este masura a temperaturii solului?;Ce este masura a poluarii aerului?;Ce este masura a migratiei pasarilor?|Ce este masura a diversitatii speciilor?|Biodiversitate|Grea|300
+Indice Simpson|Ce este indice de diversitate?;Ce este indice de desertificare?;Ce este indice de precipitare?;Ce este indice de fotosinteza?|Ce este indice de diversitate?|Biodiversitate|Grea|300
+Bogatie specifica|Ce este numarul de specii?;Ce este numarul de indivizi dintr-o specie?;Ce este masa solului?;Ce este viteza vantului?|Ce este numarul de specii?|Biodiversitate|Grea|300
+Uniformitate specifica|Ce este distributia indivizilor intre specii?;Ce este raspandirea apei in sol?;Ce este marimea frunzelor?;Ce este temperatura medie?|Ce este distributia indivizilor intre specii?|Biodiversitate|Grea|300
+Endemism ridicat|Ce este multe specii unice local?;Ce este multe specii introduse?;Ce este multe specii disparute global?;Ce este multe specii domestice?|Ce este multe specii unice local?|Biodiversitate|Grea|300
+Hotspot de biodiversitate|Ce este zona bogata si amenintata?;Ce este zona fara specii rare?;Ce este zona exclusiv urbana?;Ce este zona fara endemisme?|Ce este zona bogata si amenintata?|Biodiversitate|Grea|300
+Extinctie locala|Ce este disparitia unei specii dintr-o zona?;Ce este disparitia globala totala?;Ce este aparitia unei specii noi?;Ce este cresterea unei populatii?|Ce este disparitia unei specii dintr-o zona?|Biodiversitate|Grea|300
+Extinctie globala|Ce este disparitia completa a speciei?;Ce este disparitia dintr-un singur lac?;Ce este migrarea sezoniera?;Ce este reducerea temporara?|Ce este disparitia completa a speciei?|Biodiversitate|Grea|300
+Extinctie functionala|Ce este specie prea rara pentru rol ecologic?;Ce este specie foarte abundenta?;Ce este specie nou formata?;Ce este specie cu rol crescut?|Ce este specie prea rara pentru rol ecologic?|Biodiversitate|Grea|300
+Eroziune genetica|Ce este pierderea diversitatii genetice?;Ce este cresterea numarului de gene?;Ce este schimbarea lantului trofic?;Ce este acumularea biomasei?|Ce este pierderea diversitatii genetice?|Biodiversitate|Grea|300
+Fond genetic|Ce este totalitatea genelor populatiei?;Ce este totalitatea habitatelor?;Ce este masa organismelor?;Ce este numarul de ecosisteme?|Ce este totalitatea genelor populatiei?|Biodiversitate|Grea|300
+Flux genic|Ce este schimbul de gene intre populatii?;Ce este fluxul apei in rau?;Ce este energia din piramida?;Ce este miscarea pradatorilor?|Ce este schimbul de gene intre populatii?|Biodiversitate|Grea|300
+Deriva genetica|Ce este schimbare intamplatoare a genelor?;Ce este selectie prin adaptare clara?;Ce este migratie sezoniera?;Ce este crestere rapida a biomasei?|Ce este schimbare intamplatoare a genelor?|Biodiversitate|Grea|300
+Efect fondator|Ce este diversitate redusa la populatie noua?;Ce este crestere prin polenizare?;Ce este refacere dupa incendiu?;Ce este disparitie prin pradare?|Ce este diversitate redusa la populatie noua?|Biodiversitate|Grea|300
+Efect bottleneck|Ce este reducere genetica dupa scadere brusca?;Ce este crestere a arealului?;Ce este stabilitate ecologica maxima?;Ce este dominanta unui pradator?|Ce este reducere genetica dupa scadere brusca?|Biodiversitate|Grea|300
+Selectie naturala|Ce este avantajul indivizilor adaptati?;Ce este alegerea umana a raselor?;Ce este disparitia prin poluare doar?;Ce este marirea habitatului?|Ce este avantajul indivizilor adaptati?|Biodiversitate|Grea|300
+Selectie sexuala|Ce este reproducere influentata de trasaturi atractive?;Ce este hrana pe nivel trofic?;Ce este reciclarea nutrientilor?;Ce este poluarea solului?|Ce este reproducere influentata de trasaturi atractive?|Biodiversitate|Grea|300
+Speciatie alopatrica|Ce este formare de specii prin izolare geografica?;Ce este disparitie prin poluare?;Ce este competitia intre plante?;Ce este hranirea cu detritus?|Ce este formare de specii prin izolare geografica?|Biodiversitate|Grea|300
+Speciatie simpatrica|Ce este formare de specii in aceeasi zona?;Ce este formare prin separare continentala?;Ce este succesiune dupa incendiu?;Ce este scadere a biomasei?|Ce este formare de specii in aceeasi zona?|Biodiversitate|Grea|300
+Coevolutie|Ce este evolutie reciproca intre specii?;Ce este disparitie masiva rapida?;Ce este crestere a poluarii?;Ce este acumulare de toxine?|Ce este evolutie reciproca intre specii?|Biodiversitate|Grea|300
+Mimetism batesian|Ce este specie inofensiva care imita una periculoasa?;Ce este specie periculoasa care imita una comuna?;Ce este planta care produce hrana?;Ce este prada care fuge rapid?|Ce este specie inofensiva care imita una periculoasa?|Biodiversitate|Grea|300
+Mimetism mullerian|Ce este specii periculoase cu semnale asemanatoare?;Ce este specie inofensiva izolata?;Ce este camuflaj in sol?;Ce este pradare de varf?|Ce este specii periculoase cu semnale asemanatoare?|Biodiversitate|Grea|300
+Camuflaj|Ce este confundarea cu mediul?;Ce este cresterea populatiei?;Ce este transfer genetic?;Ce este eutrofizarea apei?|Ce este confundarea cu mediul?|Biodiversitate|Grea|300
+Aposematism|Ce este coloratie de avertizare?;Ce este pierdere de habitat?;Ce este dispersie a semintelor?;Ce este competitie pentru lumina?|Ce este coloratie de avertizare?|Biodiversitate|Grea|300
+Altruism biologic|Ce este comportament costisitor care ajuta alti indivizi?;Ce este hranire cu plante?;Ce este selectie prin poluare?;Ce este disparitie locala?|Ce este comportament costisitor care ajuta alti indivizi?|Biodiversitate|Grea|300
+Simbioza obligatorie|Ce este relatie necesara supravietuirii?;Ce este relatie temporara fara efect?;Ce este competitie pentru sol?;Ce este pradare accidentala?|Ce este relatie necesara supravietuirii?|Biodiversitate|Grea|300
+Simbioza facultativa|Ce este relatie benefica dar neobligatorie?;Ce este relatie mereu daunatoare?;Ce este extinctie globala?;Ce este fragmentare severa?|Ce este relatie benefica dar neobligatorie?|Biodiversitate|Grea|300
+Parazit obligatoriu|Ce este organism dependent de gazda?;Ce este specie independenta total?;Ce este planta producatoare?;Ce este pradator de varf?|Ce este organism dependent de gazda?|Biodiversitate|Grea|300
+Gazda|Ce este organismul pe care traieste parazitul?;Ce este organismul care descompune solul?;Ce este pradatorul de varf?;Ce este factorul climatic?|Ce este organismul pe care traieste parazitul?|Biodiversitate|Grea|300
+Vector biologic|Ce este organism care transmite agenti intre gazde?;Ce este planta care polenizeaza vantul?;Ce este specie care produce oxigen?;Ce este habitat fragmentat?|Ce este organism care transmite agenti intre gazde?|Biodiversitate|Grea|300
+Bioacumulare|Ce este acumularea toxinelor in organism?;Ce este cresterea numarului de specii?;Ce este scaderea temperaturii?;Ce este refacerea habitatului?|Ce este acumularea toxinelor in organism?|Biodiversitate|Grea|300
+Biomagnificare|Ce este cresterea toxinelor pe niveluri trofice?;Ce este cresterea biomasei plantelor?;Ce este inmultirea polenizatorilor?;Ce este refacerea solului?|Ce este cresterea toxinelor pe niveluri trofice?|Biodiversitate|Grea|300
+Eutrofizare|Ce este exces de nutrienti in ape?;Ce este lipsa totala de lumina?;Ce este crestere a geneticii?;Ce este dispersie prin vant?|Ce este exces de nutrienti in ape?|Biodiversitate|Grea|300
+Hipoxie acvatica|Ce este scaderea oxigenului din apa?;Ce este cresterea oxigenului din sol?;Ce este inmultirea mamiferelor?;Ce este reducerea temperaturii aerului?|Ce este scaderea oxigenului din apa?|Biodiversitate|Grea|300
+Desertificare|Ce este degradarea terenurilor spre ariditate?;Ce este cresterea padurilor tropicale?;Ce este extinderea zonelor umede?;Ce este polenizarea intensa?|Ce este degradarea terenurilor spre ariditate?|Biodiversitate|Grea|300
+Defrisare|Ce este eliminarea padurilor?;Ce este refacerea padurilor?;Ce este conservarea in situ?;Ce este cresterea diversitatii?|Ce este eliminarea padurilor?|Biodiversitate|Grea|300
+Supraexploatare|Ce este folosirea excesiva a speciilor?;Ce este protectia stricta a speciilor?;Ce este cresterea habitatelor?;Ce este restaurarea naturala?|Ce este folosirea excesiva a speciilor?|Biodiversitate|Grea|300
+Captura accidentala|Ce este prinderea neintentionata a speciilor?;Ce este reproducerea controlata?;Ce este polenizarea manuala?;Ce este refacerea populatiei?|Ce este prinderea neintentionata a speciilor?|Biodiversitate|Grea|300
+Braconaj|Ce este vanarea ilegala a speciilor?;Ce este monitorizarea legala?;Ce este conservarea genetica?;Ce este migratia naturala?|Ce este vanarea ilegala a speciilor?|Biodiversitate|Grea|300
+Schimbare de areal|Ce este mutarea distributiei speciilor?;Ce este cresterea unei frunze?;Ce este reducerea genelor?;Ce este hranirea cu detritus?|Ce este mutarea distributiei speciilor?|Biodiversitate|Grea|300
+Fenologie|Ce este calendarul evenimentelor biologice?;Ce este harta habitatelor?;Ce este masa organismelor?;Ce este nivelul de toxine?|Ce este calendarul evenimentelor biologice?|Biodiversitate|Grea|300
+Decalaj fenologic|Ce este nepotrivirea timpului dintre specii?;Ce este potrivirea perfecta a habitatelor?;Ce este cresterea populatiei izolate?;Ce este refacerea dupa incendiu?|Ce este nepotrivirea timpului dintre specii?|Biodiversitate|Grea|300
+Rezilienta ecologica|Ce este revenirea dupa perturbare?;Ce este disparitia completa?;Ce este cresterea toxinelor?;Ce este scaderea genelor?|Ce este revenirea dupa perturbare?|Biodiversitate|Grea|300
+Rezistenta ecologica|Ce este capacitatea de a suporta perturbari?;Ce este refacerea dupa disparitie?;Ce este introducerea speciilor exotice?;Ce este reducerea habitatului?|Ce este capacitatea de a suporta perturbari?|Biodiversitate|Grea|300
+Disturbanta ecologica|Ce este eveniment care modifica ecosistemul?;Ce este relatie stabila intre specii?;Ce este conservare ex situ?;Ce este productie de oxigen?|Ce este eveniment care modifica ecosistemul?|Biodiversitate|Grea|300
+Regim de disturbanta|Ce este frecventa si intensitatea perturbarii?;Ce este cantitatea de polen?;Ce este numarul de gene dominante?;Ce este viteza pradatorului?|Ce este frecventa si intensitatea perturbarii?|Biodiversitate|Grea|300
+Efect de margine|Ce este schimbarea conditiilor la marginea habitatului?;Ce este disparitia completa a ecosistemului?;Ce este cresterea oxigenului in apa?;Ce este fixarea azotului?|Ce este schimbarea conditiilor la marginea habitatului?|Biodiversitate|Grea|300
+Fragmentare genetica|Ce este izolarea populatiilor si reducerea schimbului genetic?;Ce este conectarea habitatelor?;Ce este cresterea fluxului genic?;Ce este inmultirea polenizatorilor?|Ce este izolarea populatiilor si reducerea schimbului genetic?|Biodiversitate|Grea|300

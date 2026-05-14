@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -14,7 +15,16 @@ public class QuizManager : MonoBehaviour
     public GameObject panelCorect;
     public GameObject panelGresit;
 
+    [Header("Panel final")]
+    public GameObject panelFinal;
+    public TMP_Text textFinalTimpTotal;
+    public TMP_Text textFinalIntrebariCorecte;
+    public TMP_Text textFinalIntrebariGresite;
+    public TMP_Text textFinalScor;
+    public TMP_Text textFinalCastigator;
+
     [Header("Info joc")]
+    public TMP_Text textJucatorCurent;
     public TMP_Text textIntrebariCorecte;
     public TMP_Text textIntrebariGresite;
     public TMP_Text textIntrebariRamase;
@@ -24,84 +34,89 @@ public class QuizManager : MonoBehaviour
     public TMP_Text textTimpIntrebare;
     public TMP_Text textTimpSesiune;
 
-    [Header("Pion")]
-    public PawnMovement pawnMovement;
+    [Header("Pioni")]
+    public PawnMovement[] pioniJucatori;
+
+    [Header("Multiplayer local")]
+    public bool omoaraJucatori = true;
+    public float distantaOmor = 0.25f;
 
     [Header("Setari joc")]
     public int maximIntrebariPeMapa = 24;
+
+    [Header("Debug")]
+    public TMP_Text textDificultateAleasa;
+    public TMP_Text textModJoc;
+
+    private PawnMovement[] pioniActivi;
 
     private List<QuestionData> intrebari;
     private List<QuestionData> intrebariRamase;
     private QuestionData intrebareCurenta;
 
-    private int numarCorecte = 0;
-    private int numarGresite = 0;
-    private int scorTotal = 0;
+    private int indexJucatorCurent = 0;
+    private int indexCastigator = -1;
+
+    private int[] corecteJucatori;
+    private int[] gresiteJucatori;
+    private int[] scorJucatori;
 
     private float timpIntrebare = 0f;
     private float timpSesiune = 0f;
 
     private bool cronometruIntrebarePornit = false;
     private bool cronometruSesiunePornit = false;
+    private bool jocTerminat = false;
+    private bool aRaspunsLaIntrebareaCurenta = false;
 
     void Start()
     {
-        // Pregatim ecranul cand porneste scena
         AscundePaneluriRezultat();
+        AscundePanelFinal();
 
-        // Luam toate intrebarile din Assets/Resources
-        intrebari = Resources.LoadAll<QuestionData>("").ToList();
+        PregatesteModJoc();
+        IncarcaIntrebariDupaDificultate();
 
-        Debug.Log("Am gasit " + intrebari.Count + " intrebari in baza de date.");
-
-        if (intrebari.Count == 0)
+        if (intrebari == null || intrebari.Count == 0)
         {
-            Debug.LogError("Nu avem intrebari incarcate. Verifica daca asset-urile sunt in Assets/Resources.");
+            Debug.LogError("Nu avem intrebari pentru dificultatea: " + GameSettings.dificultateAleasa);
+            SeteazaTextCuAutoFit(textRaspuns, "Nu exista intrebari pentru dificultatea: " + GameSettings.dificultateAleasa);
             return;
         }
 
-        // Amestecam toate intrebarile, ca sa fie alta ordine la fiecare play
-        intrebari = intrebari
-            .OrderBy(q => Random.value)
-            .ToList();
-
-        // Lista asta scade cand primim o intrebare noua, ca sa nu se repete
         intrebariRamase = new List<QuestionData>(intrebari);
 
-        // Resetam statisticile pentru jocul nou
-        numarCorecte = 0;
-        numarGresite = 0;
-        scorTotal = 0;
-
-        // Pornim cronometrul sesiunii
         timpSesiune = 0f;
-        cronometruSesiunePornit = true;
-
-        // Pregatim cronometrul intrebarii
         timpIntrebare = 0f;
+
+        cronometruSesiunePornit = true;
         cronometruIntrebarePornit = false;
 
-        // Resetam pionul la inceputul tablei
-        if (pawnMovement != null)
-            pawnMovement.ReseteazaPion();
+        jocTerminat = false;
+        aRaspunsLaIntrebareaCurenta = false;
 
-        // Actualizam textele din GameInfo
         ActualizeazaInfoJoc();
         ActualizeazaTextTimpuri();
+        ActualizeazaPanelFinal();
 
-        // Bagam prima intrebare
         AfiseazaIntrebareAleatorie();
+    }
+
+    void OnDestroy()
+    {
+        DezaboneazaEvenimentePioni();
     }
 
     void Update()
     {
-        // Cronometrul total merge cat timp jocul nu e terminat
+        if (jocTerminat)
+            return;
+
         if (cronometruSesiunePornit)
         {
             timpSesiune += Time.deltaTime;
         }
 
-        // Cronometrul intrebarii merge doar pana playerul raspunde
         if (cronometruIntrebarePornit)
         {
             timpIntrebare += Time.deltaTime;
@@ -110,44 +125,167 @@ public class QuizManager : MonoBehaviour
         ActualizeazaTextTimpuri();
     }
 
+    void PregatesteModJoc()
+    {
+        DezaboneazaEvenimentePioni();
+
+        if (pioniJucatori == null || pioniJucatori.Length == 0)
+        {
+            Debug.LogError("Nu ai pus niciun pion in QuizManager -> Pioni Jucatori.");
+
+            pioniActivi = new PawnMovement[0];
+            corecteJucatori = new int[0];
+            gresiteJucatori = new int[0];
+            scorJucatori = new int[0];
+
+            return;
+        }
+
+        int numarPioniFolositi = 1;
+
+        if (GameSettings.EsteMultiplayerLocal())
+        {
+            numarPioniFolositi = GameSettings.numarJucatoriMultiplayer;
+        }
+
+        numarPioniFolositi = Mathf.Clamp(numarPioniFolositi, 1, pioniJucatori.Length);
+
+        pioniActivi = new PawnMovement[numarPioniFolositi];
+
+        for (int i = 0; i < pioniJucatori.Length; i++)
+        {
+            PawnMovement pion = pioniJucatori[i];
+
+            if (pion == null)
+                continue;
+
+            bool esteActiv = i < numarPioniFolositi;
+
+            pion.gameObject.SetActive(esteActiv);
+
+            if (esteActiv)
+            {
+                pioniActivi[i] = pion;
+                pion.ReseteazaPion();
+            }
+        }
+
+        corecteJucatori = new int[numarPioniFolositi];
+        gresiteJucatori = new int[numarPioniFolositi];
+        scorJucatori = new int[numarPioniFolositi];
+
+        indexJucatorCurent = 0;
+        indexCastigator = -1;
+
+        for (int i = 0; i < numarPioniFolositi; i++)
+        {
+            corecteJucatori[i] = 0;
+            gresiteJucatori[i] = 0;
+            scorJucatori[i] = 0;
+        }
+
+        AboneazaEvenimentePioni();
+
+        if (textModJoc != null)
+        {
+            if (GameSettings.EsteSingleplayer())
+                SeteazaTextCuAutoFit(textModJoc, "Mod: Singleplayer");
+            else
+                SeteazaTextCuAutoFit(textModJoc, "Mod: Multiplayer local");
+        }
+
+        Debug.Log("Mod joc pregatit. Numar pioni activi: " + numarPioniFolositi);
+    }
+
+    void AboneazaEvenimentePioni()
+    {
+        if (pioniActivi == null)
+            return;
+
+        foreach (PawnMovement pion in pioniActivi)
+        {
+            if (pion == null)
+                continue;
+
+            // Scoatem intai, ca sa nu dublam abonarea din greseala
+            pion.OnAjunsLaUltimulTile -= CandPionAjungeLaFinal;
+            pion.OnMutareTerminata -= CandPionTerminaMutarea;
+
+            pion.OnAjunsLaUltimulTile += CandPionAjungeLaFinal;
+            pion.OnMutareTerminata += CandPionTerminaMutarea;
+        }
+    }
+
+    void DezaboneazaEvenimentePioni()
+    {
+        if (pioniActivi == null)
+            return;
+
+        foreach (PawnMovement pion in pioniActivi)
+        {
+            if (pion == null)
+                continue;
+
+            pion.OnAjunsLaUltimulTile -= CandPionAjungeLaFinal;
+            pion.OnMutareTerminata -= CandPionTerminaMutarea;
+        }
+    }
+
+    void IncarcaIntrebariDupaDificultate()
+    {
+        List<QuestionData> toateIntrebarile = Resources.LoadAll<QuestionData>("").ToList();
+
+        string dificultateAleasa = GameSettings.dificultateAleasa;
+
+        Debug.Log("Dificultate primita din meniu: " + dificultateAleasa);
+        Debug.Log("Total intrebari gasite in Resources: " + toateIntrebarile.Count);
+
+        intrebari = toateIntrebarile
+            .Where(q => q != null)
+            .Where(q => SuntAceeasiDificultate(q.dificultate, dificultateAleasa))
+            .OrderBy(q => UnityEngine.Random.value)
+            .ToList();
+
+        Debug.Log("Intrebari dupa filtrare (" + dificultateAleasa + "): " + intrebari.Count);
+
+        if (textDificultateAleasa != null)
+        {
+            SeteazaTextCuAutoFit(textDificultateAleasa, "Dificultate: " + dificultateAleasa);
+        }
+    }
+
+    bool SuntAceeasiDificultate(string dificultateDinIntrebare, string dificultateAleasa)
+    {
+        if (string.IsNullOrWhiteSpace(dificultateDinIntrebare))
+            return false;
+
+        if (string.IsNullOrWhiteSpace(dificultateAleasa))
+            return false;
+
+        return dificultateDinIntrebare.Trim().Equals(
+            dificultateAleasa.Trim(),
+            StringComparison.OrdinalIgnoreCase
+        );
+    }
+
     public void AfiseazaIntrebareAleatorie()
     {
-        // Resetam UI-ul pentru o intrebare noua
+        if (jocTerminat)
+            return;
+
+        if (intrebariRamase == null)
+            return;
+
         AscundePaneluriRezultat();
         ActiveazaButoane();
 
-        // Daca playerul a raspuns corect cat trebuie, a terminat mapa
-        if (numarCorecte >= maximIntrebariPeMapa)
-        {
-            // Oprim ambele cronometre
-            cronometruSesiunePornit = false;
-            cronometruIntrebarePornit = false;
+        aRaspunsLaIntrebareaCurenta = false;
 
-            Debug.Log("Mapa terminata.");
-
-            SeteazaTextCuAutoFit(textRaspuns, "GG, ati terminat mapa.");
-
-            foreach (Button buton in butoaneRaspunsuri)
-            {
-                if (buton != null)
-                    buton.gameObject.SetActive(false);
-            }
-
-            ActualizeazaInfoJoc();
-            ActualizeazaTextTimpuri();
-            return;
-        }
-
-        // Daca s-au terminat intrebarile din baza, nu mai avem ce afisa
         if (intrebariRamase.Count == 0)
         {
-            // Oprim ambele cronometre
-            cronometruSesiunePornit = false;
-            cronometruIntrebarePornit = false;
+            OpresteJocul();
 
-            Debug.Log("S-au terminat intrebarile din baza de date.");
-
-            SeteazaTextCuAutoFit(textRaspuns, "Nu mai sunt intrebari disponibile.");
+            SeteazaTextCuAutoFit(textRaspuns, "Nu mai sunt intrebari pentru dificultatea: " + GameSettings.dificultateAleasa);
 
             foreach (Button buton in butoaneRaspunsuri)
             {
@@ -157,39 +295,39 @@ public class QuizManager : MonoBehaviour
 
             ActualizeazaInfoJoc();
             ActualizeazaTextTimpuri();
+            ActualizeazaPanelFinal();
+
+            if (panelFinal != null)
+                panelFinal.SetActive(true);
+
             return;
         }
 
-        // Alegem random doar din intrebarile care n-au fost folosite
-        int indexRandom = Random.Range(0, intrebariRamase.Count);
+        int indexRandom = UnityEngine.Random.Range(0, intrebariRamase.Count);
         intrebareCurenta = intrebariRamase[indexRandom];
 
-        // Scoatem intrebarea aleasa, ca sa nu se repete
         intrebariRamase.RemoveAt(indexRandom);
 
-        // Resetam timpul pentru intrebarea noua
         timpIntrebare = 0f;
         cronometruIntrebarePornit = true;
 
-        // In stil Jeopardy: afisam raspunsul, iar pe butoane punem intrebarile
         SeteazaTextCuAutoFit(textRaspuns, intrebareCurenta.raspuns);
 
-        // Spargem variantele dupa ; si curatam spatiile inutile
         List<string> variante = intrebareCurenta.variante
             .Split(';')
             .Select(v => v.Trim())
             .Where(v => !string.IsNullOrEmpty(v))
             .ToList();
 
-        // Amestecam variantele, ca butonul corect sa nu fie mereu in acelasi loc
-        variante = variante.OrderBy(v => Random.value).ToList();
+        variante = variante.OrderBy(v => UnityEngine.Random.value).ToList();
 
-        // Punem variantele pe cele 4 butoane
         for (int i = 0; i < butoaneRaspunsuri.Length; i++)
         {
+            if (butoaneRaspunsuri[i] == null)
+                continue;
+
             if (i >= variante.Count)
             {
-                // Daca avem mai putine variante, ascundem butoanele extra
                 butoaneRaspunsuri[i].gameObject.SetActive(false);
                 continue;
             }
@@ -204,18 +342,11 @@ public class QuizManager : MonoBehaviour
             {
                 SeteazaTextCuAutoFit(textButon, variantaAleasa);
             }
-            else
-            {
-                Debug.LogWarning("Butonul " + butoaneRaspunsuri[i].name + " nu are TMP_Text copil.");
-            }
 
-            // Curatam click-urile vechi, altfel se aduna de la intrebarile trecute
             butoaneRaspunsuri[i].onClick.RemoveAllListeners();
 
-            // Salvam varianta local, ca Unity sa nu incurce valorile din loop
             string variantaPentruClick = variantaAleasa;
 
-            // Cand apasam butonul, verificam daca e corect
             butoaneRaspunsuri[i].onClick.AddListener(() =>
             {
                 VerificaRaspuns(variantaPentruClick);
@@ -224,32 +355,44 @@ public class QuizManager : MonoBehaviour
 
         ActualizeazaInfoJoc();
         ActualizeazaTextTimpuri();
+        ActualizeazaPanelFinal();
     }
 
     void VerificaRaspuns(string variantaAleasa)
     {
-        // Oprim timpul intrebarii imediat ce playerul a raspuns
+        if (jocTerminat)
+            return;
+
+        if (aRaspunsLaIntrebareaCurenta)
+            return;
+
+        if (intrebareCurenta == null)
+            return;
+
+        if (pioniActivi == null || pioniActivi.Length == 0)
+            return;
+
+        aRaspunsLaIntrebareaCurenta = true;
         cronometruIntrebarePornit = false;
 
-        // Comparam ce a apasat playerul cu varianta corecta din baza noastra
         bool esteCorect = variantaAleasa == intrebareCurenta.corect;
 
-        Debug.Log("Ai ales: " + variantaAleasa);
+        Debug.Log("Jucator " + GetNumarJucator(indexJucatorCurent) + " a ales: " + variantaAleasa);
         Debug.Log("Corect era: " + intrebareCurenta.corect);
-        Debug.Log("Timp pe intrebare: " + FormateazaTimp(timpIntrebare));
 
         if (esteCorect)
         {
-            // Daca e bine, crestem corectele si adaugam puncte prin codul C
-            numarCorecte++;
-            scorTotal = NativeGameLogic.AdaugaScor(scorTotal, intrebareCurenta.punctaj);
+            corecteJucatori[indexJucatorCurent]++;
 
-            Debug.Log("Corect! +" + intrebareCurenta.punctaj + " puncte");
-            Debug.Log("Scor total: " + scorTotal);
+            scorJucatori[indexJucatorCurent] = NativeGameLogic.AdaugaScor(
+                scorJucatori[indexJucatorCurent],
+                intrebareCurenta.punctaj
+            );
 
-            // Decizia de mutare vine tot prin codul C
-            if (pawnMovement != null && NativeGameLogic.TrebuieMutatPionul(esteCorect))
-                pawnMovement.MutaLaUrmatorulTile();
+            PawnMovement pionCurent = GetPionCurent();
+
+            if (pionCurent != null && NativeGameLogic.TrebuieMutatPionul(esteCorect))
+                pionCurent.MutaLaUrmatorulTile();
 
             if (panelCorect != null)
                 panelCorect.SetActive(true);
@@ -259,11 +402,7 @@ public class QuizManager : MonoBehaviour
         }
         else
         {
-            // Daca e gresit, crestem gresitele, dar pionul sta pe loc
-            numarGresite++;
-
-            Debug.Log("Gresit. Pionul ramane pe loc.");
-            Debug.Log("Scorul ramane: " + scorTotal);
+            gresiteJucatori[indexJucatorCurent]++;
 
             if (panelGresit != null)
                 panelGresit.SetActive(true);
@@ -272,81 +411,220 @@ public class QuizManager : MonoBehaviour
                 panelCorect.SetActive(false);
         }
 
-        // Actualizam textele dupa raspuns
         ActualizeazaInfoJoc();
         ActualizeazaTextTimpuri();
+        ActualizeazaPanelFinal();
 
-        // Dupa un raspuns, blocam butoanele ca sa nu apese cineva de 100 de ori
         DezactiveazaButoane();
     }
 
     public void ContinuaJocul()
     {
-        // Butonul Continua din panel-uri cheama metoda asta
+        if (jocTerminat)
+            return;
+
+        if (aRaspunsLaIntrebareaCurenta)
+        {
+            TreciLaUrmatorulJucator();
+        }
+
         AfiseazaIntrebareAleatorie();
     }
 
-    public void ReseteazaJocul()
+    void TreciLaUrmatorulJucator()
     {
-        // Reamestecam toate intrebarile
-        intrebari = Resources.LoadAll<QuestionData>("")
-            .OrderBy(q => Random.value)
-            .ToList();
+        if (GameSettings.EsteSingleplayer())
+            return;
 
-        intrebariRamase = new List<QuestionData>(intrebari);
+        int totalJucatori = GetTotalJucatori();
 
-        // Resetam tot ce tine de statistici
-        numarCorecte = 0;
-        numarGresite = 0;
-        scorTotal = 0;
+        if (totalJucatori <= 1)
+            return;
 
-        // Resetam ambele cronometre
-        timpIntrebare = 0f;
-        timpSesiune = 0f;
+        indexJucatorCurent = NativeGameLogic.UrmatorulJucator(indexJucatorCurent, totalJucatori);
 
-        cronometruIntrebarePornit = false;
-        cronometruSesiunePornit = true;
+        Debug.Log("Urmeaza Jucator " + GetNumarJucator(indexJucatorCurent));
+    }
 
-        // Resetam pionul
-        if (pawnMovement != null)
-            pawnMovement.ReseteazaPion();
+    void CandPionTerminaMutarea(PawnMovement pionCareSaMutat)
+    {
+        if (jocTerminat)
+            return;
+
+        if (GameSettings.EsteMultiplayerLocal())
+        {
+            VerificaOmorDupaMutare(pionCareSaMutat);
+        }
+
+        ActualizeazaInfoJoc();
+        ActualizeazaPanelFinal();
+    }
+
+    void VerificaOmorDupaMutare(PawnMovement pionCareSaMutat)
+    {
+        if (!omoaraJucatori)
+            return;
+
+        if (pionCareSaMutat == null || pioniActivi == null)
+            return;
+
+        int indexAtacator = Array.IndexOf(pioniActivi, pionCareSaMutat);
+
+        if (indexAtacator < 0)
+            return;
+
+        for (int i = 0; i < pioniActivi.Length; i++)
+        {
+            PawnMovement victima = pioniActivi[i];
+
+            if (victima == null)
+                continue;
+
+            if (i == indexAtacator)
+                continue;
+
+            bool trebuieOmorat = NativeGameLogic.TrebuieOmoratPion(
+                pionCareSaMutat.transform.position,
+                victima.transform.position,
+                distantaOmor
+            );
+
+            if (trebuieOmorat)
+            {
+                Debug.Log("Jucator " + GetNumarJucator(indexAtacator) + " a omorat Jucator " + GetNumarJucator(i));
+                victima.TrimiteLaStart();
+            }
+        }
+    }
+
+    void CandPionAjungeLaFinal(PawnMovement pionCastigator)
+    {
+        if (jocTerminat)
+            return;
+
+        indexCastigator = Array.IndexOf(pioniActivi, pionCastigator);
+
+        if (indexCastigator < 0)
+            indexCastigator = indexJucatorCurent;
+
+        AfiseazaPanelFinal();
+    }
+
+    void AfiseazaPanelFinal()
+    {
+        if (!jocTerminat)
+        {
+            OpresteJocul();
+        }
+
+        AscundePaneluriRezultat();
 
         foreach (Button buton in butoaneRaspunsuri)
         {
             if (buton != null)
-                buton.gameObject.SetActive(true);
+            {
+                buton.interactable = false;
+                buton.gameObject.SetActive(false);
+            }
         }
 
+        SeteazaTextCuAutoFit(textRaspuns, "Joc terminat!");
+
+        if (panelFinal != null)
+            panelFinal.SetActive(true);
+
+        ActualizeazaPanelFinal();
         ActualizeazaInfoJoc();
         ActualizeazaTextTimpuri();
+    }
 
-        AfiseazaIntrebareAleatorie();
+    void OpresteJocul()
+    {
+        jocTerminat = true;
+        cronometruSesiunePornit = false;
+        cronometruIntrebarePornit = false;
+    }
+
+    void ActualizeazaPanelFinal()
+    {
+        if (pioniActivi == null || pioniActivi.Length == 0)
+            return;
+
+        int indexPentruFinal = indexCastigator >= 0 ? indexCastigator : indexJucatorCurent;
+        indexPentruFinal = Mathf.Clamp(indexPentruFinal, 0, pioniActivi.Length - 1);
+
+        if (textFinalCastigator != null)
+        {
+            if (GameSettings.EsteSingleplayer())
+                SeteazaTextCuAutoFit(textFinalCastigator, "Joc terminat");
+            else
+                SeteazaTextCuAutoFit(textFinalCastigator, "Castigator: Jucator " + GetNumarJucator(indexPentruFinal));
+        }
+
+        if (textFinalTimpTotal != null)
+            SeteazaTextCuAutoFit(textFinalTimpTotal, "Timp total: " + FormateazaTimp(timpSesiune));
+
+        if (textFinalIntrebariCorecte != null)
+            SeteazaTextCuAutoFit(textFinalIntrebariCorecte, "Intrebari Corecte: " + corecteJucatori[indexPentruFinal]);
+
+        if (textFinalIntrebariGresite != null)
+            SeteazaTextCuAutoFit(textFinalIntrebariGresite, "Intrebari Gresite: " + gresiteJucatori[indexPentruFinal]);
+
+        if (textFinalScor != null)
+            SeteazaTextCuAutoFit(textFinalScor, "Scor: " + scorJucatori[indexPentruFinal]);
+    }
+
+    void AscundePanelFinal()
+    {
+        if (panelFinal != null)
+            panelFinal.SetActive(false);
     }
 
     void ActualizeazaInfoJoc()
     {
-        // Scriem informatiile mici din dreapta sus
+        if (pioniActivi == null || pioniActivi.Length == 0)
+            return;
+
+        int j = Mathf.Clamp(indexJucatorCurent, 0, pioniActivi.Length - 1);
+
+        if (textJucatorCurent != null)
+        {
+            if (GameSettings.EsteSingleplayer())
+                SeteazaTextCuAutoFit(textJucatorCurent, "Singleplayer");
+            else
+                SeteazaTextCuAutoFit(textJucatorCurent, "Jucator curent: " + GetNumarJucator(j));
+        }
+
         if (textIntrebariCorecte != null)
-            SeteazaTextCuAutoFit(textIntrebariCorecte, "Intrebari Corecte: " + numarCorecte);
+            SeteazaTextCuAutoFit(textIntrebariCorecte, "Intrebari Corecte: " + corecteJucatori[j]);
 
         if (textIntrebariGresite != null)
-            SeteazaTextCuAutoFit(textIntrebariGresite, "Intrebari Gresite: " + numarGresite);
+            SeteazaTextCuAutoFit(textIntrebariGresite, "Intrebari Gresite: " + gresiteJucatori[j]);
 
         if (textIntrebariRamase != null)
         {
-            // Aici folosim functia din C pentru cate raspunsuri corecte mai trebuie
-            int corecteRamase = NativeGameLogic.CalculeazaIntrebariRamase(maximIntrebariPeMapa, numarCorecte);
+            PawnMovement pionCurent = GetPionCurent();
 
-            SeteazaTextCuAutoFit(textIntrebariRamase, "Intrebari Ramase: " + corecteRamase + "/" + maximIntrebariPeMapa);
+            if (pionCurent != null)
+            {
+                int pasiRamasi = pionCurent.GetPasiRamasi();
+                int totalPasi = pionCurent.GetTotalPasiPanaLaFinal();
+
+                SeteazaTextCuAutoFit(textIntrebariRamase, "Intrebari Ramase: " + pasiRamasi + "/" + totalPasi);
+            }
+            else
+            {
+                int corecteRamase = NativeGameLogic.CalculeazaIntrebariRamase(maximIntrebariPeMapa, corecteJucatori[j]);
+                SeteazaTextCuAutoFit(textIntrebariRamase, "Intrebari Ramase: " + corecteRamase + "/" + maximIntrebariPeMapa);
+            }
         }
 
         if (textScor != null)
-            SeteazaTextCuAutoFit(textScor, "Scor: " + scorTotal);
+            SeteazaTextCuAutoFit(textScor, "Scor: " + scorJucatori[j]);
     }
 
     void ActualizeazaTextTimpuri()
     {
-        // Punem pe ecran timpul intrebarii si timpul total al sesiunii
         if (textTimpIntrebare != null)
             SeteazaTextCuAutoFit(textTimpIntrebare, "Timp Intrebare: " + FormateazaTimp(timpIntrebare));
 
@@ -356,7 +634,6 @@ public class QuizManager : MonoBehaviour
 
     string FormateazaTimp(float timp)
     {
-        // Transformam secundele in format frumos: minute:secunde
         int minute = Mathf.FloorToInt(timp / 60f);
         int secunde = Mathf.FloorToInt(timp % 60f);
 
@@ -368,7 +645,6 @@ public class QuizManager : MonoBehaviour
         if (textTMP == null)
             return;
 
-        // Daca textul are scriptul de auto-fit, il folosim
         TMPTextAutoFit autoFit = textTMP.GetComponent<TMPTextAutoFit>();
 
         if (autoFit != null)
@@ -377,7 +653,6 @@ public class QuizManager : MonoBehaviour
         }
         else
         {
-            // Daca nu are scriptul, tot incercam sa il facem safe
             textTMP.text = textNou;
             textTMP.enableAutoSizing = true;
             textTMP.fontSizeMin = 8f;
@@ -389,7 +664,6 @@ public class QuizManager : MonoBehaviour
 
     void AscundePaneluriRezultat()
     {
-        // Inchidem ambele panel-uri
         if (panelCorect != null)
             panelCorect.SetActive(false);
 
@@ -399,7 +673,6 @@ public class QuizManager : MonoBehaviour
 
     void ActiveazaButoane()
     {
-        // Facem butoanele apasabile din nou
         foreach (Button buton in butoaneRaspunsuri)
         {
             if (buton != null)
@@ -409,11 +682,68 @@ public class QuizManager : MonoBehaviour
 
     void DezactiveazaButoane()
     {
-        // Blocam butoanele dupa raspuns
         foreach (Button buton in butoaneRaspunsuri)
         {
             if (buton != null)
                 buton.interactable = false;
         }
+    }
+
+    PawnMovement GetPionCurent()
+    {
+        if (pioniActivi == null)
+            return null;
+
+        if (indexJucatorCurent < 0 || indexJucatorCurent >= pioniActivi.Length)
+            return null;
+
+        return pioniActivi[indexJucatorCurent];
+    }
+
+    int GetTotalJucatori()
+    {
+        if (pioniActivi == null)
+            return 0;
+
+        return pioniActivi.Length;
+    }
+
+    int GetNumarJucator(int index)
+    {
+        return index + 1;
+    }
+
+    public void ReseteazaJocul()
+    {
+        DezaboneazaEvenimentePioni();
+
+        PregatesteModJoc();
+
+        IncarcaIntrebariDupaDificultate();
+        intrebariRamase = new List<QuestionData>(intrebari);
+
+        timpIntrebare = 0f;
+        timpSesiune = 0f;
+
+        cronometruIntrebarePornit = false;
+        cronometruSesiunePornit = true;
+
+        jocTerminat = false;
+        aRaspunsLaIntrebareaCurenta = false;
+
+        foreach (Button buton in butoaneRaspunsuri)
+        {
+            if (buton != null)
+                buton.gameObject.SetActive(true);
+        }
+
+        AscundePaneluriRezultat();
+        AscundePanelFinal();
+
+        ActualizeazaInfoJoc();
+        ActualizeazaTextTimpuri();
+        ActualizeazaPanelFinal();
+
+        AfiseazaIntrebareAleatorie();
     }
 }

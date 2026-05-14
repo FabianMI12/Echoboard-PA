@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7664fde8c9dc60d4a993dfb18570d5ba, type: 3}
+  m_Name: Question_Masura_biodiversitatii_care_ia_in_calcul_numarul_de_specii_si_abundenta_lor
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionData
+  raspuns: Masura biodiversitatii care ia in calcul numarul de specii si abundenta
+    lor
+  variante: Ce este indicele de diversitate?;Ce este densitatea populatiei?;Ce este
+    capacitatea de suport?;Ce este rata natalitatii?
+  corect: Ce este indicele de diversitate?
+  categorie: Biodiversitate
+  dificultate: Grea
+  punctaj: 300

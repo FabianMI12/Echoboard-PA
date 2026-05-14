@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7664fde8c9dc60d4a993dfb18570d5ba, type: 3}
+  m_Name: Question_Perturbare_naturala_sau_umana_care_modifica_rapid_un_ecosistem
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionData
+  raspuns: Perturbare naturala sau umana care modifica rapid un ecosistem
+  variante: Ce este disturbanta ecologica?;Ce este nisa ecologica?;Ce este cooperarea?;Ce
+    este fluxul genic?
+  corect: Ce este disturbanta ecologica?
+  categorie: Biodiversitate
+  dificultate: Grea
+  punctaj: 300

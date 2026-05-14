@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7664fde8c9dc60d4a993dfb18570d5ba, type: 3}
+  m_Name: Question_Reducerea_brusca_a_diversitatii_genetice_dupa_scaderea_populatiei
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionData
+  raspuns: Reducerea brusca a diversitatii genetice dupa scaderea populatiei
+  variante: Ce este efectul de bottleneck?;Ce este mutualismul?;Ce este succesiunea
+    secundara?;Ce este capacitatea de suport?
+  corect: Ce este efectul de bottleneck?
+  categorie: Biodiversitate
+  dificultate: Grea
+  punctaj: 300

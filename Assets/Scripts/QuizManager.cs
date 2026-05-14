@@ -125,7 +125,7 @@ public class QuizManager : MonoBehaviour
 
             Debug.Log("Mapa terminata.");
 
-            textRaspuns.text = "GG, ati terminat mapa.";
+            SeteazaTextCuAutoFit(textRaspuns, "GG, ati terminat mapa.");
 
             foreach (Button buton in butoaneRaspunsuri)
             {
@@ -147,7 +147,7 @@ public class QuizManager : MonoBehaviour
 
             Debug.Log("S-au terminat intrebarile din baza de date.");
 
-            textRaspuns.text = "Nu mai sunt intrebari disponibile.";
+            SeteazaTextCuAutoFit(textRaspuns, "Nu mai sunt intrebari disponibile.");
 
             foreach (Button buton in butoaneRaspunsuri)
             {
@@ -172,7 +172,7 @@ public class QuizManager : MonoBehaviour
         cronometruIntrebarePornit = true;
 
         // In stil Jeopardy: afisam raspunsul, iar pe butoane punem intrebarile
-        textRaspuns.text = intrebareCurenta.raspuns;
+        SeteazaTextCuAutoFit(textRaspuns, intrebareCurenta.raspuns);
 
         // Spargem variantele dupa ; si curatam spatiile inutile
         List<string> variante = intrebareCurenta.variante
@@ -202,7 +202,7 @@ public class QuizManager : MonoBehaviour
 
             if (textButon != null)
             {
-                textButon.text = variantaAleasa;
+                SeteazaTextCuAutoFit(textButon, variantaAleasa);
             }
             else
             {
@@ -240,14 +240,15 @@ public class QuizManager : MonoBehaviour
 
         if (esteCorect)
         {
-            // Daca e bine, crestem corectele, adaugam puncte si mutam pionul
+            // Daca e bine, crestem corectele si adaugam puncte prin codul C
             numarCorecte++;
-            scorTotal += intrebareCurenta.punctaj;
+            scorTotal = NativeGameLogic.AdaugaScor(scorTotal, intrebareCurenta.punctaj);
 
             Debug.Log("Corect! +" + intrebareCurenta.punctaj + " puncte");
             Debug.Log("Scor total: " + scorTotal);
 
-            if (pawnMovement != null)
+            // Decizia de mutare vine tot prin codul C
+            if (pawnMovement != null && NativeGameLogic.TrebuieMutatPionul(esteCorect))
                 pawnMovement.MutaLaUrmatorulTile();
 
             if (panelCorect != null)
@@ -326,34 +327,31 @@ public class QuizManager : MonoBehaviour
     {
         // Scriem informatiile mici din dreapta sus
         if (textIntrebariCorecte != null)
-            textIntrebariCorecte.text = "Intrebari Corecte: " + numarCorecte;
+            SeteazaTextCuAutoFit(textIntrebariCorecte, "Intrebari Corecte: " + numarCorecte);
 
         if (textIntrebariGresite != null)
-            textIntrebariGresite.text = "Intrebari Gresite: " + numarGresite;
+            SeteazaTextCuAutoFit(textIntrebariGresite, "Intrebari Gresite: " + numarGresite);
 
         if (textIntrebariRamase != null)
         {
-            // Aici "ramase" inseamna cate raspunsuri corecte mai trebuie pentru a termina mapa
-            int corecteRamase = maximIntrebariPeMapa - numarCorecte;
+            // Aici folosim functia din C pentru cate raspunsuri corecte mai trebuie
+            int corecteRamase = NativeGameLogic.CalculeazaIntrebariRamase(maximIntrebariPeMapa, numarCorecte);
 
-            if (corecteRamase < 0)
-                corecteRamase = 0;
-
-            textIntrebariRamase.text = "Intrebari Ramase: " + corecteRamase + "/" + maximIntrebariPeMapa;
+            SeteazaTextCuAutoFit(textIntrebariRamase, "Intrebari Ramase: " + corecteRamase + "/" + maximIntrebariPeMapa);
         }
 
         if (textScor != null)
-            textScor.text = "Scor: " + scorTotal;
+            SeteazaTextCuAutoFit(textScor, "Scor: " + scorTotal);
     }
 
     void ActualizeazaTextTimpuri()
     {
         // Punem pe ecran timpul intrebarii si timpul total al sesiunii
         if (textTimpIntrebare != null)
-            textTimpIntrebare.text = "Timp Intrebare: " + FormateazaTimp(timpIntrebare);
+            SeteazaTextCuAutoFit(textTimpIntrebare, "Timp Intrebare: " + FormateazaTimp(timpIntrebare));
 
         if (textTimpSesiune != null)
-            textTimpSesiune.text = "Timp Sesiune: " + FormateazaTimp(timpSesiune);
+            SeteazaTextCuAutoFit(textTimpSesiune, "Timp Sesiune: " + FormateazaTimp(timpSesiune));
     }
 
     string FormateazaTimp(float timp)
@@ -363,6 +361,30 @@ public class QuizManager : MonoBehaviour
         int secunde = Mathf.FloorToInt(timp % 60f);
 
         return minute.ToString("00") + ":" + secunde.ToString("00");
+    }
+
+    void SeteazaTextCuAutoFit(TMP_Text textTMP, string textNou)
+    {
+        if (textTMP == null)
+            return;
+
+        // Daca textul are scriptul de auto-fit, il folosim
+        TMPTextAutoFit autoFit = textTMP.GetComponent<TMPTextAutoFit>();
+
+        if (autoFit != null)
+        {
+            autoFit.SeteazaText(textNou);
+        }
+        else
+        {
+            // Daca nu are scriptul, tot incercam sa il facem safe
+            textTMP.text = textNou;
+            textTMP.enableAutoSizing = true;
+            textTMP.fontSizeMin = 8f;
+            textTMP.textWrappingMode = TextWrappingModes.Normal;
+            textTMP.overflowMode = TextOverflowModes.Ellipsis;
+            textTMP.ForceMeshUpdate();
+        }
     }
 
     void AscundePaneluriRezultat()

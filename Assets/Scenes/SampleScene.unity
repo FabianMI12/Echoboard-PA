@@ -4854,6 +4854,27 @@ MonoBehaviour:
   m_EffectColor: {r: 0.078431375, g: 0.078431375, b: 0.078431375, a: 0.5}
   m_EffectDistance: {x: 3, y: -3}
   m_UseGraphicAlpha: 1
+--- !u!1 &1396579830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3967606275616835338, guid: 352ef4da596d6564eb9f53991c9fd1d2, type: 3}
+  m_PrefabInstance: {fileID: 5576435123191520172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1396579834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396579830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e5308b627e4c498bb42df2c38b1d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TMPTextAutoFit
+  marimeMaxima: 28
+  marimeMinima: 10
+  permiteRanduriMultiple: 1
+  modOverflow: 1
 --- !u!1 &1408503615
 GameObject:
   m_ObjectHideFlags: 0
@@ -4940,6 +4961,7 @@ GameObject:
   - component: {fileID: 1421249269}
   - component: {fileID: 1421249271}
   - component: {fileID: 1421249270}
+  - component: {fileID: 1421249272}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5066,6 +5088,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421249268}
   m_CullTransparentMesh: 1
+--- !u!114 &1421249272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421249268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff6e5308b627e4c498bb42df2c38b1d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TMPTextAutoFit
+  marimeMaxima: 32
+  marimeMinima: 10
+  permiteRanduriMultiple: 1
+  modOverflow: 1
 --- !u!1 &1434885908
 GameObject:
   m_ObjectHideFlags: 0
@@ -7488,7 +7526,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3967606275616835338, guid: 352ef4da596d6564eb9f53991c9fd1d2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1396579834}
   m_SourcePrefab: {fileID: 100100000, guid: 352ef4da596d6564eb9f53991c9fd1d2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

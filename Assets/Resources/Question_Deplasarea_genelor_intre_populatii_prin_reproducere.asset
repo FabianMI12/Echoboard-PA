@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7664fde8c9dc60d4a993dfb18570d5ba, type: 3}
+  m_Name: Question_Deplasarea_genelor_intre_populatii_prin_reproducere
+  m_EditorClassIdentifier: Assembly-CSharp::QuestionData
+  raspuns: Deplasarea genelor intre populatii prin reproducere
+  variante: Ce este fluxul genic?;Ce este eutrofizarea?;Ce este camuflajul?;Ce este
+    biomasa?
+  corect: Ce este fluxul genic?
+  categorie: Biodiversitate
+  dificultate: Medie
+  punctaj: 200
